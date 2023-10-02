@@ -12,9 +12,9 @@ COPY ./sha256/ .
 RUN go build -o main .
 CMD ["./main"]
 
-# Stage 3: Build the 'maining' application
+# Stage 3: Build the 'mining' application
 FROM golang:1.16-alpine as maining
 WORKDIR /app
-COPY ./maining/ .
+COPY mining/ .
 RUN go build -o main .
 CMD ["./main"]

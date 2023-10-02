@@ -1,5 +1,6 @@
 # Скриптики на GO
 - mining
+  - 
 - sha256
 - simplehash (5 symbols)
 
@@ -69,3 +70,12 @@ Run:
 ```bash
 docker run -it mining-image
 ```
+
+## Online Go Compiler
+1. зайти в <folder>/main.go
+2. скопировать содержимое файла
+3. вставить в один из онлайн компиляторов
+
+[Online Go Compiler](https://www.programiz.com/golang/online-compiler/)
+
+[Online Go Lang Compiler](https://www.onlinegdb.com/online_go_compiler)
