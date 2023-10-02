@@ -1,29 +1,71 @@
-# Mining example
-This is a simple example of how work mining proof of work.
+# Скриптики на GO
+- mining
+- sha256
+- simplehash (5 symbols)
 
-## Requirements:
-### Local machine
-- [Go](https://golang.org/doc/install)
+# Setup
+Скачайте и установите git: [Download Git](https://github.com/git-guides/install-git#install-git-on-windows)
 
-
-### Docker
-- [Docker](https://docs.docker.com/desktop/install/windows-install/)
-
-## Setup:
-
-### Docker
-Build the docker image:
+Cклонируйте репозиторий:
 ```bash
-docker build -t mining-example .
+git clone https://github.com/Krabik6/lecture_blockchain-hashing-consensus.git
 ```
 
-Run the docker image:
+## Go
+Install: [Download and install](https://go.dev/doc/install)
 ```bash
-docker run -it mining-example
+go version
+```
+### Simplehash (5 symbols)
+```bash
+go run ./simplehash/main.go
+```
+### Sha256
+```bash
+go run ./sha256/main.go
+```
+### Mining:
+```bash
+go run ./mining/main.go
 ```
 
-### Go
-Build the project:
+
+## Docker
+
+Install: [Install Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/)
+
+### Simplehash:
+
+Build:
 ```bash
-go run main.go
+docker build -t simplehash-image --target simplehash .
+```
+
+Run:
+```bash
+docker run -it simplehash-image
+```
+
+### Sha256:
+
+Build:
+```bash
+docker build -t sha256-image --target sha256 .
+```
+
+Run:
+```bash
+docker run -it sha256-image
+```
+
+### Mining:
+
+Build:
+```bash
+docker build -t mining-image --target mining .
+```
+
+Run:
+```bash
+docker run -it mining-image
 ```

@@ -1,12 +1,25 @@
 package main
 
 import (
+	"bufio"
 	"crypto/sha256"
 	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-	hashString := getHash("Hello, World!")
+	fmt.Println("Введите строку:")
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		fmt.Printf("Ошибка при чтении ввода: %v\n", err)
+		os.Exit(1)
+	}
+
+	input = strings.TrimSpace(input) // Удаление лишних пробелов и символов новой строки
+
+	hashString := getHash(input)
 	fmt.Println("Hash:", hashString)
 }
 
@@ -17,7 +30,7 @@ func getHash(str string) string {
 	sha256Hash := sha256.New()
 	_, err := sha256Hash.Write(inputBytes)
 	if err != nil {
-		fmt.Printf("Error: %v\n", err)
+		fmt.Printf("Ошибка: %v\n", err)
 		return ""
 	}
 	hashBytes := sha256Hash.Sum(nil)

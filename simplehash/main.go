@@ -1,14 +1,26 @@
 package main
 
 import (
+	"bufio"
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
 	"io"
+	"os"
+	"strings"
 )
 
 func main() {
-	input := "Hello, World!"
+	fmt.Println("Введите строку:")
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		fmt.Printf("Ошибка при чтении ввода: %v\n", err)
+		os.Exit(1)
+	}
+
+	input = strings.TrimSpace(input) // Удаление лишних пробелов и символов новой строки
+
 	hashValue := simpleHash(input)
 	fmt.Println("Hash:", hashValue)
 }
