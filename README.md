@@ -1,8 +1,7 @@
 # Скриптики на GO
-- mining
-  - 
-- sha256
-- simplehash (5 symbols)
+- [mining](mining/main.go)
+- [sha256](sha256/main.go)
+- [simplehash](simplehash/main.go) (5 symbols)
 
 # Setup
 Скачайте и установите git: [Download Git](https://github.com/git-guides/install-git#install-git-on-windows)
@@ -72,10 +71,11 @@ docker run -it mining-image
 ```
 
 ## Online Go Compiler
-1. зайти в <folder>/main.go
+1. зайти в < folder >/main.go (можете выбрать из списка ниже)
+    - [mining](mining/main.go)
+    - [sha256](sha256/main.go)
+    - [simplehash](simplehash/main.go)
 2. скопировать содержимое файла
 3. вставить в один из онлайн компиляторов
-
-[Online Go Compiler](https://www.programiz.com/golang/online-compiler/)
-
-[Online Go Lang Compiler](https://www.onlinegdb.com/online_go_compiler)
+- [Online Go Compiler](https://www.programiz.com/golang/online-compiler/)
+- [Online Go Lang Compiler](https://www.onlinegdb.com/online_go_compiler)
